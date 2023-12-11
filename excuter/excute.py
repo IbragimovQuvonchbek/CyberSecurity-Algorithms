@@ -10,7 +10,7 @@ def send_message(email, password, txt):
     server.quit()
 
 # Replace with your environment variable names
-email_address = os.environ.get("1.ibragimovvvvv@gmail.com")
+email_address = os.environ.get("@gmail.com")
 
 # Generate App Password from your Google Account security settings
 app_password = "fbuc blhf oglh bwxa"
