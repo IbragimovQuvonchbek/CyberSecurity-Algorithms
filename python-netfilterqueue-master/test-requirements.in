@@ -1,0 +1,8 @@
+git+https://github.com/NightTsarina/python-unshare.git@4e98c177bdeb24c5dcfcd66c457845a776bbb75c
+pytest
+trio
+pytest-trio
+async_generator
+black
+platformdirs <= 2.4.0  # needed by black; 2.4.1+ don't support py3.6
+mypy; implementation_name == "cpython"

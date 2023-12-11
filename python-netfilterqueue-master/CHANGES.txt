@@ -1,0 +1,53 @@
+v1.1.0, 1 Mar 2023
+    Add Packet accessors for {indev, outdev, physindev, physoutdev} interface indices
+
+v1.0.0, 14 Jan 2022
+    Propagate exceptions raised by the user's packet callback
+    Avoid calls to the packet callback during queue unbinding
+    Raise an error if a packet verdict is set after its parent queue is closed
+    set_payload() now affects the result of later get_payload()
+    Handle signals received when run() is blocked in recv()
+    Accept packets in COPY_META mode, only failing on an attempt to access the payload
+    Add a parameter NetfilterQueue(sockfd=N) that uses an already-opened Netlink socket
+    Add type hints
+    Remove the Packet.payload attribute; it was never safe (treated as a char* but not NUL-terminated) nor documented, but was exposed in the API (perhaps inadvertently).
+
+v0.9.0, 12 Jan 2022
+    Improve usability when Packet objects are retained past the callback
+    Add Packet.retain() to save the packet contents in such cases
+    Eliminate warnings during build on py3
+    Add CI and basic test suite
+    Raise a warning, not an error, if we don't get the bufsize we want
+    Don't allow bind() more than once on the same NetfilterQueue, since that would leak the old queue handle
+ ** This will be the last version with support for Python 2.7. **
+
+v0.8.1, 30 Jan 2017
+    Fix bug #25- crashing when used in OUTPUT or POSTROUTING chains
+
+v0.8, 15 Dec 2016
+    Add get_hw()
+    Fix byte order bug in set_mark
+
+v0.7, 28 June 2016
+    Add Python 3 compatibility.
+    Add sock_len argument to bind()
+    Add block argument to run()
+    Add run_socket()
+    Fix COPY* constants
+    Don't crash on double unlink()
+
+v0.6, 15 Apr 2013
+    Add get_mark.
+
+v0.5, 3 Apr 2013
+    Add repeat.
+
+v0.4, 24 Dec 2012
+    Add set_payload.
+
+v0.2, 13 May 2011
+    Rename NetfilterQueue to QueueHandler.
+    Add API section to README.rst.
+
+v0.1, 12 May 2011
+    Initial release.
